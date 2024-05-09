@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-item">
                         <label class="search" for="company-select">所属会社：</label>
-                        <select id="user-company-2"  name="company-select">
+                        <select id="user-company"  name="company-select">
                             <option></option>
                         </select>
                     </div>
@@ -93,8 +93,11 @@
     </main>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/drag.js"></script>
-    <script type="text/javascript" src="js/costomer_search.js" defer></script>
+    
+    <!-- <script type="text/javascript" src="js/costomer_search.js" defer></script> -->
     <script type="text/javascript" src="js/costomer_delete.js"></script>
-    <script type="text/javascript" src="js/company_list.js"></script>
+    <!-- <script type="text/javascript" src="js/company_list.js"></script> -->
+    <script type="text/javascript" src="js/onload_1.js"></script>
+    
 </body>
 </html>

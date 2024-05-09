@@ -1,25 +1,18 @@
-window.onload = list();
+window.onload = function() {
+    list(); // list() を呼び出す
+};
 
 function list() {
+    const json = {
+        'method': 'list',
+        'data': {}
+    };
 
-    const form = document.querySelector('#customer_search');
+    console.log(json);
 
-        const formData = new FormData(form);
+    const url = "Company_Controller.php";
 
-        const json = {
-            'method' : 'search',
-            'data' : jsonData = {}
-        };
-
-        formData.forEach((value, key) => {
-            jsonData[key] = value;
-        });
-
-        console.log(json);
-
-        const url = "Customer_Controller.php";
-
-        fetch(url, {
+    fetch(url, {
             method: 'POST',
             body: JSON.stringify(json),
             headers: {
@@ -29,14 +22,65 @@ function list() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            displayData(data.data);
+            // displayData(data.data);
+            selectData(data.data);
+            search();
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
-};
-            
-function displayData(data) {
+}
+
+function search() {
+    const form = document.querySelector('#customer_search');
+
+    const formData = new FormData(form);
+
+    const json = {
+        'method': 'search',
+        'data': {}
+    };
+
+    formData.forEach((value, key) => {
+        json.data[key] = value;
+    });
+
+    console.log(json);
+
+    const url = "Customer_Controller.php";
+
+    fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(json),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            adisplayData(data.data);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
+
+function selectData(data) {
+    const selectElements = document.querySelectorAll('[id^="user-company"]');
+
+    selectElements.forEach(selectElement => {
+        data.forEach(item => {
+            const option = document.createElement('option');
+            option.id = item.id;
+            option.value = item.id;
+            option.textContent = item.company_name;
+            selectElement.appendChild(option);
+        });
+    });
+}
+
+function adisplayData(data) {
     const searchList = document.getElementById('search_list');
     searchList.innerHTML = '';
 
