@@ -98,7 +98,6 @@
     </main>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
-    <!-- <script type="text/javascript" src="js/costomer_getId.js"></script> -->
     <script src="js\costomer_insert.js"></script>
     <script type="text/javascript" src="js/company_list.js"></script>
     <script type="text/javascript" src="js/company_insert.js" defer></script>

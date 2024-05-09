@@ -69,7 +69,7 @@
         <section id="modalArea" class="modalArea">
         <div id="modalBg" class="modalBg"></div>
         <div class="modalWrapper">
-        <div class="modalContents">
+            <div class="modalContents">
                 <h2>会社一覧</h2>
                 <div class="modal-area">
                     <form action="" method="POST" id="company_insert">
@@ -98,11 +98,10 @@
     </main>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
-    <script type="text/javascript" src="js/costomer_getId.js" defer></script>
     <script type="text/javascript" src="js/costomer_edit.js"></script>
-    <script type="text/javascript" src="js/company_list.js"></script>
     <script type="text/javascript" src="js/company_insert.js" defer></script>
     <script type="text/javascript" src="js/company_edit.js"></script>
     <script type="text/javascript" src="js/company_delete.js"></script>
+    <script type="text/javascript" src="js/onload_2.js"></script>
 </body>
 </html>

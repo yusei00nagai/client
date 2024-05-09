@@ -1,5 +1,5 @@
 window.onload = function() {
-    list(); // list() を呼び出す
+    list();
 };
 
 function list() {
@@ -22,7 +22,6 @@ function list() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            // displayData(data.data);
             selectData(data.data);
             search();
         })

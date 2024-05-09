@@ -34,7 +34,6 @@
                         <input type="text" id="user-name-kana" name="user_kana" />
                     </div>
                     <div class="form-item sex-search">
-                        <!-- <legend class="sex">性別：</legend> -->
                         <label for="sex">性別：</label>
                         <div class="sex-1">
                             <label for="all">全て</label>
@@ -93,10 +92,7 @@
     </main>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/drag.js"></script>
-    
-    <!-- <script type="text/javascript" src="js/costomer_search.js" defer></script> -->
     <script type="text/javascript" src="js/costomer_delete.js"></script>
-    <!-- <script type="text/javascript" src="js/company_list.js"></script> -->
     <script type="text/javascript" src="js/onload_1.js"></script>
     
 </body>
