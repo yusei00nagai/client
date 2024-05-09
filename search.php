@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-item">
                         <label for="user-name-kana">顧客名（カナ）：</label>
-                        <input type="text" id="user-name-kana" name="user_kana" />
+                        <input type="text" id="user-name-kana" name="user_kana" pattern="^[ァ-ヶー]+$" />
                     </div>
                     <div class="form-item sex-search">
                         <label for="sex">性別：</label>

@@ -20,19 +20,19 @@
                 <table class="data-table">
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-name">お名前</label></th>
-                        <td class="form-item"><input type="text" id="user-name" name="user_name" value="" /></td>
+                        <td class="form-item"><input type="text" id="user-name" name="user_name" value=""  maxlength="32" required/></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-name-kana">お名前（カナ）</label></th>
-                        <td class="form-item"><input type="text" id="user-name-kana" name="user_kana" value="" /></td>
+                        <td class="form-item"><input type="text" id="user-name-kana" name="user_kana" value="" pattern="^[ァ-ヶー]+$" maxlength="32" required /></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-mail">メールアドレス</label></th>
-                        <td class="form-item"><input type="mail" id="user-mail" name="user_mail" value="" /></td>
+                        <td class="form-item"><input type="mail" id="user-mail" name="user_mail" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50"required /></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-phone">電話番号</label></th>
-                        <td class="form-item"><input type="tel" id="user-phone" name="user_phone" value="" /></td>
+                        <td class="form-item"><input type="tel" id="user-phone" name="user_phone" value="" pattern="^[0-9]+$" maxlength="15" required /></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><legend class="sex">性別</legend></th>
@@ -46,13 +46,13 @@
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-born">生年月日</label></th>
                         <td class="form-item">
-                            <input type="date" id="user-born" name="user_born" min="1930-01" value="" />
+                            <input type="date" id="user-born" name="user_born" min="1930-01" value="" required />
                         </td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-company-3">所属会社</label></th>
                         <td class="form-item">
-                            <select id="user-company-3"  name="company_id">
+                            <select id="user-company-3"  name="company_id" required>
                                 <option></option>
                             </select>
                             <button type="button" id="openModal">登録・編集</button>
