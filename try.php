@@ -73,7 +73,7 @@
                 <h2>会社一覧</h2>
                 <div class="modal-area">
                     <form action="" method="POST" id="company_insert">
-                        <input type="text" id="company-name" name="company-name">
+                        <input type="text" id="company-name" name="company-name" required>
                         <button type="submit" value="company_insert">登録</button>
                     </form>
                     <form action="" method="POST">

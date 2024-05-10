@@ -1,5 +1,5 @@
 function deleteId(e) {
-    const dialog = confirm("削除");
+    const dialog = confirm("削除してもよろしいでしょうか。");
     if (!dialog) {
         return;
     }
