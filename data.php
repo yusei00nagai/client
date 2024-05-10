@@ -24,15 +24,15 @@
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-name-kana">お名前（カナ）</label></th>
-                        <td class="data-td"><input type="text" id="user-name-kana" name="user_kana" pattern="^[ァ-ヶー]+$" maxlength="32" required /></td>
+                        <td class="data-td"><input type="text" id="user-name-kana" name="user_kana" pattern="^[ァ-ヶー]+$" maxlength="32" placeholder="※カナ入力のみ" required /></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-mail">メールアドレス</label></th>
-                        <td class="data-td"><input type="mail" id="user-mail" name="user_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50"required /></td>
+                        <td class="data-td"><input type="mail" id="user-mail" name="user_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50" placeholder="※半角英数字のみ"required /></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-phone">電話番号</label></th>
-                        <td class="data-td"><input type="tel" id="user-phone" name="user_phone" pattern="^[0-9]+$" maxlength="15" required /></td>
+                        <td class="data-td"><input type="tel" id="user-phone" name="user_phone" pattern="^[0-9]+$" maxlength="15" placeholder="※半角数字のみ" required /></td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><legend class="sex">性別</legend></th>
