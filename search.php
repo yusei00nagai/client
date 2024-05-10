@@ -70,9 +70,9 @@
                     <tr class="look-tr">
                         <th class="look-th">顧客ID</th>
                         <th class="look-th">顧客名（カナ）</th>
-                        <th class="look-th">生年月日</th>
+                        <!-- <th class="look-th">生年月日</th> -->
                         <th class="look-th">電話番号/メールアドレス</th>
-                        <th class="look-th">性別</th>
+                        <!-- <th class="look-th">性別</th> -->
                         <th class="look-th">所属会社</th>
                         <th class="look-th">新規日時/更新日時</th>
                         <th class="look-th">編集</th>

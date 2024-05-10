@@ -99,9 +99,9 @@ function adisplayData(data) {
         tableHTML += '<tr id="' + item['id'] + '">';
         tableHTML += '<td>' + item['id'] + '</td>';
         tableHTML += '<td>' + item['user_name'] + '(' + item['user_kana'] + ')' +'</td>';
-        tableHTML += '<td nowrap>' + item['user_born'] + '</td>';
+        // tableHTML += '<td nowrap>' + item['user_born'] + '</td>';
         tableHTML += '<td>' + item['user_phone'] + '<br>' + item['user_mail'] + '</td>';
-        tableHTML += '<td nawrap>' + item['user_sex'] + '</td>';
+        // tableHTML += '<td nawrap>' + item['user_sex'] + '</td>';
         tableHTML += '<td nawrap>' + item['company_name'] + '</td>';
         tableHTML += '<td nowrap>' + item['insert_time'] + '<br>' + item['update_time'] +'</td>';
         tableHTML += '<td><a href="./try.php?id=' + item['id'] + '" class="a-btn updateLink">編集</a></td>';
