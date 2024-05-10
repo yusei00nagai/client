@@ -14,7 +14,7 @@ function deleteId(e) {
         }
     };
 
-    const url = "Company_controller.php";
+    const url = "Company_Controller.php";
 
     fetch(url, {
         method : 'POST',

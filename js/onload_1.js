@@ -105,7 +105,7 @@ function adisplayData(data) {
         tableHTML += '<td nawrap>' + item['company_name'] + '</td>';
         tableHTML += '<td nowrap>' + item['insert_time'] + '<br>' + item['update_time'] +'</td>';
         tableHTML += '<td><a href="./try.php?id=' + item['id'] + '" class="a-btn updateLink">編集</a></td>';
-        tableHTML += '<td><a class="a-btn deleteLink" id="' + item['id'] + '" onclick="deleteId(this)">削除</a></td>';
+        tableHTML += '<td><a href="" class="a-btn deleteLink" id="' + item['id'] + '" onclick="deleteId(this)">削除</a></td>';
         tableHTML += '</tr>';
     });
     searchList.innerHTML = tableHTML;
