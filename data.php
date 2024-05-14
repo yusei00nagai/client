@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -16,37 +18,50 @@
     <main>
         <div class="area">
             <h2 class="h2-data">データ登録</h2>
-            <form action="" method="POST" id="customer_insert">
+            <form action="" method="POST" id="customer_insert" novalidate>
                 <table class="data-table">
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-name">お名前</label></th>
-                        <td class="data-td"><input type="text" id="user-name" name="user_name" maxlength="32" required /></td>
+                        <td class="data-td">
+                            <input type="text" id="user-name" name="user_name" maxlength="32" required /><a></a>
+                            <span class="errorMessage"></span>
+                        </td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-name-kana">お名前（カナ）</label></th>
-                        <td class="data-td"><input type="text" id="user-name-kana" name="user_kana" pattern="^[ァ-ヶー]+$" maxlength="32" placeholder="※カナ入力のみ" required /></td>
+                        <td class="data-td">
+                            <input type="text" id="user-name-kana" name="user_kana" pattern="^[ァ-ヶー]+$" maxlength="32" placeholder="※カナ入力のみ" required /><a></a>
+                            <span class="errorMessage"></span>
+                        </td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-mail">メールアドレス</label></th>
-                        <td class="data-td"><input type="mail" id="user-mail" name="user_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50" placeholder="※半角英数字のみ"required /></td>
+                        <td class="data-td">
+                            <input type="mail" id="user-mail" name="user_mail" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50" placeholder="※半角英数字のみ"required /><a></a>
+                            <span class="errorMessage"></span>
+                        </td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-phone">電話番号</label></th>
-                        <td class="data-td"><input type="tel" id="user-phone" name="user_phone" pattern="^[0-9]+$" maxlength="15" placeholder="※半角数字のみ" required /></td>
+                        <td class="data-td">
+                            <input type="tel" id="user-phone" name="user_phone" pattern="^[0-9]+$" maxlength="15" placeholder="※半角数字のみ" required /><a></a>
+                            <span class="errorMessage"></span>
+                        </td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><legend class="sex">性別</legend></th>
                         <td class="data-td">
                             <label for="man" >男性</label>
-                            <input type="radio" id="man" name="user_sex" value="man" checked />
+                            <input type="radio" id="man" name="user_sex" value="man" checked /><a></a>
                             <label for="woman">・女性</label>
-                            <input type="radio" id="woman" name="user_sex" value="woman"/>
+                            <input type="radio" id="woman" name="user_sex" value="woman"/><span class="errorMessage"></span>
                         </td>
                     </tr>
                     <tr class="data-tr">
                         <th class="form-title"><label for="user-born">生年月日</label></th>
                         <td class="data-td">
-                            <input type="date" id="user-born" name="user_born" min="1930-01" value="2000-01-01" required />
+                            <input type="date" id="user-born" name="user_born" min="1930-01" value="2000-01-01" required /><a></a>
+                            <span class="errorMessage"></span>
                         </td>
                     </tr>
                     <tr class="data-tr">
@@ -56,6 +71,7 @@
                                 <option></option>
                             </select>
                             <button type="button" id="openModal" >登録・編集</button>
+                            <span class="errorMessage"></span>
                         </td>
                     </tr>
                 </table>

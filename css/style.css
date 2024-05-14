@@ -111,7 +111,14 @@ td, .form-title{
 }
 
 .a-btn {
-    color:rgb(73, 73, 73);
+    background-color: #c2c4c5; 
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 70%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
  
 /* -----以下登録ページ----- */
@@ -213,4 +220,18 @@ button {
 .modal-button {
     border: none;
     background: rgb(221, 221, 221);
+}
+
+label.is-error > span {
+    color: red;
+}
+label.is-error > input {
+    border-color: red;
+    background-color: rgba(200, 0, 0, 0.1);
+}
+  
+.errorMessage {
+    display: block;
+    color: red;
+    font-size: 12px;
 }

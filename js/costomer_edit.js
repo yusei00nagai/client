@@ -1,38 +1,78 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('#customer_edit');
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
+    const form = document.querySelector('#customer_insert'); // formのIDがcustomer_insert
+    const inputElms = form.querySelectorAll('input, select');
 
     form.addEventListener('submit', function(event) {
-        alert("成功しました。")
-        window.location.href = "./search.php";
         event.preventDefault(); 
+        inputElms.forEach((input) => {
+            input.classList.remove('is-error');
+            const errorMessage = input.nextElementSibling;
+            if (errorMessage && errorMessage.classList.contains('errorMessage')) {
+                errorMessage.textContent = '';
+            }
+        });
+
+        let isValid = true;
+        inputElms.forEach((input) => {
+            if (!input.checkValidity()) {
+                input.classList.add('is-error');
+                const errorMessage = input.nextElementSibling;
+                if (errorMessage && errorMessage.classList.contains('errorMessage')) {
+                    errorMessage.textContent = input.validationMessage;
+                }
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            return;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
 
         const formData = new FormData(form);
-        const json = {
-            'method' : 'edit', 
-            'id' : id,
-            'data': jsonData = {}
-        };
-
+        const jsonData = {};
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
-        
+
+        const json = {
+            'method' : 'edit', 
+            'id' : id,
+            'data': jsonData
+        };
+
         console.log(json);
 
         const url = 'Customer_Controller.php';
 
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify(json)
+            body: JSON.stringify(json),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            alert("成功しました。")
+            window.location.href = "./search.php";
         })
         .catch(error => {
             console.error('Error:', error);
+        });
+    });
+
+    inputElms.forEach((input) => {
+        input.addEventListener('invalid', (e) => {
+            const currentTarget = e.currentTarget;
+            currentTarget.classList.add('is-error');
+            const errorMessage = currentTarget.nextElementSibling;
+            if (errorMessage && errorMessage.classList.contains('errorMessage')) {
+                errorMessage.textContent = currentTarget.validationMessage;
+            }
         });
     });
 });
