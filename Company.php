@@ -8,7 +8,7 @@ class Company {
         $this->DB = new DB();
     }
 
-    public function list($listData) {
+    public function search($listData) {
         $dbCon = $this->DB->set();
 
         $sql = 'SELECT * from companies WHERE 1';

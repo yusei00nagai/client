@@ -2,15 +2,14 @@
 require_once 'DB.php';
 
 class Customer {
-    public $DB;
+    public $dbCon;
 
     public function __construct() {
-        $this->DB = new DB();
+        $DB = new DB();
+        $this->dbCon = $DB->set();
     }
 
     public function insert($data) {
-        $dbCon = $this->DB->set();//コンストラクトcu
-    
         $keys = implode(',', array_map(function($key) {
             return "{$key}";
         }, array_keys($data['data'])));
@@ -21,7 +20,7 @@ class Customer {
 
         $sql = "INSERT INTO users( {$keys} ) VALUES( {$values} )";
     
-        if ($dbCon->query($sql)) {
+        if ($this->dbCon->query($sql)) {
             $response = [
                 'success' => '0 : 正常', 
                 'data' => $data
@@ -36,8 +35,6 @@ class Customer {
     }
 
     public function edit($data) {
-        $dbCon = $this->DB->set();
-
         $sql = "UPDATE users SET user_name = '{$data["data"]["user_name"]}',
                 user_kana = '{$data["data"]["user_kana"]}',
                 user_mail = '{$data["data"]["user_mail"]}',
@@ -47,7 +44,7 @@ class Customer {
                 company_id = '{$data["data"]["company_id"]}'
                 WHERE id = {$data["id"]}";
         
-        if ($dbCon->query($sql)) {
+        if ($this->dbCon->query($sql)) {
             $response = [
                 'success' => '0 : 正常', 
                 'data' => $data
@@ -62,8 +59,6 @@ class Customer {
     }
 
     public function search($searchData) {
-        $dbCon = $this->DB->set();
-
         $sql = 'SELECT users.id, users.user_name, users.user_kana, users.user_born, users.user_mail, users.user_phone, users.user_sex, users.company_id, companies.company_name, users.insert_time, users.update_time 
                 FROM users INNER JOIN companies ON users.company_id = companies.company_id 
                 WHERE 1';
@@ -84,7 +79,7 @@ class Customer {
             $sql .= " AND users.company_id LIKE '{$searchData["data"]["company-select"]}'";
         }
 
-        $result = $dbCon->query($sql);
+        $result = $this->dbCon->query($sql);
         
         $list_array = [];
 
@@ -120,7 +115,6 @@ class Customer {
     }
 
     public function getId($getIdData) {
-        $dbCon = $this->DB->set();
         $id = $getIdData['data']['id'];
 
         $sql = "SELECT users.user_name, users.user_kana, users.user_born, users.user_mail, users.user_phone, users.user_sex, companies.company_id 
@@ -129,7 +123,7 @@ class Customer {
         
         
 
-        $result = $dbCon->query($sql);
+        $result = $this->dbCon->query($sql);
                 
         $list_array = [];
 
@@ -161,12 +155,11 @@ class Customer {
     }
 
     public function delete($deleteData) {
-        $dbCon = $this->DB->set();
         $id = $deleteData['data']['id'];
 
         $sql = "DELETE FROM users WHERE id = '$id'";
 
-        $result = $dbCon->query($sql);
+        $result = $this->dbCon->query($sql);
 
         if (!$result) {
             $response = [

@@ -14,7 +14,7 @@ if (isset($data["method"])) {
 
     switch ($data["method"]) {
         case "list":
-            $response = $companyModel->list($data);
+            $response = $companyModel->search($data);
             break;
         case "insert":
             $response = $companyModel->insert($data);
