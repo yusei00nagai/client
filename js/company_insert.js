@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        console.log(json);
         const url = 'Company_Controller.php';
 
         fetch(url, {
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 alert("成功しました。");
                 window.location.href = "./data.php";    //リロードで良い？
             })

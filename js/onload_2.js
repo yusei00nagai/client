@@ -9,8 +9,6 @@ function list() {
         }
     };
 
-    console.log(json);
-
     const url = "Company_Controller.php";
 
     fetch(url, {
@@ -22,7 +20,6 @@ function list() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         displayData(data.data);
         selectData(data.data);
         getId();
@@ -43,8 +40,6 @@ function getId() {
         }
     };
 
-    console.log(json);
-
     const url = "Customer_Controller.php";
 
     fetch(url, {
@@ -56,7 +51,6 @@ function getId() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         wdisplayData(data.data);
     })
     .catch(error => {

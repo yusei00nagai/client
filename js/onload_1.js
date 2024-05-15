@@ -8,8 +8,6 @@ function list() {
         'data': {}
     };
 
-    console.log(json);
-
     const url = "Company_Controller.php";
 
     fetch(url, {
@@ -21,7 +19,6 @@ function list() {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             selectData(data.data);
             search();
         })
@@ -44,8 +41,6 @@ function search() {
         json.data[key] = value;
     });
 
-    console.log(json);
-
     const url = "Customer_Controller.php";
 
     fetch(url, {
@@ -57,7 +52,6 @@ function search() {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             adisplayData(data.data);
         })
         .catch(error => {

@@ -8,8 +8,6 @@ function list() {
         }
     };
 
-    console.log(json);
-
     const url = "Company_Controller.php";
 
     fetch(url, {
@@ -21,7 +19,6 @@ function list() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         displayData(data.data);
         selectData(data.data);
     })

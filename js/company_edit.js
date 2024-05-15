@@ -1,12 +1,10 @@
 function editId(e) {
     const strId = e.id;
     const id = strId.replace('chenge-button', '');
-    console.log(e.id);
 
     chengeButton(id);
 
     const checkBtn = document.querySelector('#chenge-button' + id);
-    console.log(id);
 
 
     checkBtn.addEventListener('click', function(event) {
@@ -21,8 +19,6 @@ function editId(e) {
                 'company_name': document.getElementById('company' + id).value
             }
         };
-        
-        console.log(json);
 
         const url = 'Company_Controller.php';
 
@@ -32,7 +28,6 @@ function editId(e) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             alert("成功しました。")
             window.location.href = "./data.php";
         })

@@ -43,8 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
             'data': jsonData
         };
 
-        console.log(json);
-
         const url = 'Customer_Controller.php';
 
         fetch(url, {
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             alert("成功しました。")
             window.location.href = "./search.php";
         })

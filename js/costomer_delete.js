@@ -5,7 +5,6 @@ function deleteId(e) {
     }
 
     const id = e.id;
-    console.log(id);
 
     const json = {
         method : 'delete',
@@ -25,7 +24,6 @@ function deleteId(e) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         if (data.success === '0 : 正常') {
             const deletedRow = document.querySelector('tr[id="' + id + '"]');
             if (deletedRow !== null) {
