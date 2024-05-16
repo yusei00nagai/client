@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('#customer_insert'); // formのIDがcustomer_insert
+    const form = document.querySelector('#customer_insert');
     const inputElms = form.querySelectorAll('input, select');
 
     form.addEventListener('submit', function(event) {

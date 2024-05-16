@@ -9,8 +9,6 @@ function editId(e) {
 
     checkBtn.addEventListener('click', function(event) {
         event.preventDefault(); 
-        // const form = document.querySelector('#company_edit');
-        // const formData = new FormData(form);
 
         const json = {
             'method' : 'edit', 

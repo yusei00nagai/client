@@ -77,13 +77,12 @@ main {
 }
 
 .section-3 .table {
-    width: 100%; /* または適切な幅を指定 */
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
 
 .table {
-    /* display: block; */
     font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 50%;
@@ -144,7 +143,6 @@ td, .form-title{
 }
 
 .data-btn > a {
-    /* color:  rgb(216, 56, 56); */
     margin-right: 20px;
 }
 

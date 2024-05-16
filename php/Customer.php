@@ -99,7 +99,7 @@ class Customer extends Model{
         if (!$result) {
             $response = [
                 'success' => '1 : 異常',
-                'data' => [] //ui側に
+                'data' => []
             ];
         } else {
             $response = [

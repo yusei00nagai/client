@@ -16,7 +16,7 @@ abstract class Model {
     abstract public function insert($data);
     abstract public function edit($data);
 
-    //共通化が多いメソッド
+    //共通が多いメソッド
     public function delete($deleteData) {
         $id = $deleteData['data']['id'];
 
