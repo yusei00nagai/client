@@ -29,7 +29,7 @@ function editId(e) {
         .then(response => response.json())
         .then(data => {
             alert("成功しました。")
-            window.location.href = "./data.php";
+            window.location.reload();
         })
         .catch(error => {
             console.error('Error:', error);

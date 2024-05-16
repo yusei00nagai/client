@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>顧客管理システム</title>
 </head>
 <body>
@@ -70,9 +70,7 @@
                     <tr class="look-tr">
                         <th class="look-th">顧客ID</th>
                         <th class="look-th">顧客名（カナ）</th>
-                        <!-- <th class="look-th">生年月日</th> -->
                         <th class="look-th">電話番号/メールアドレス</th>
-                        <!-- <th class="look-th">性別</th> -->
                         <th class="look-th">所属会社</th>
                         <th class="look-th">新規日時/更新日時</th>
                         <th class="look-th">編集</th>
@@ -91,9 +89,9 @@
     </div>
     </main>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/drag.js"></script>
-    <script type="text/javascript" src="js/costomer_delete.js"></script>
-    <script type="text/javascript" src="js/onload_1.js"></script>
+    <script type="text/javascript" src="../js/drag.js"></script>
+    <script type="text/javascript" src="../js/costomer_delete.js"></script>
+    <script type="text/javascript" src="../js/onload_1.js"></script>
     
 </body>
 </html>
