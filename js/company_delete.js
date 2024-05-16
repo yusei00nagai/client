@@ -24,7 +24,7 @@ function deleteId(e) {
     })
     .then(response => response.json())
     .then(data => {
-        alert("成功しました。")
+        alert("成功しました。");
         window.location.href = "./data.php";
     })
     .catch(error => {

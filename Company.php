@@ -1,19 +1,15 @@
 <?php
 require_once 'DB.php';
+require_once 'Model.php';
 
-class Company {
-    public $DB;
-
-    public function __construct() {
-        $this->DB = new DB();
-    }
+class Company extends Model{
+    public $sqlTable = 'companies';
+    public $sqlId = 'company_id';
 
     public function search($listData) {
-        $dbCon = $this->DB->set();
-
         $sql = 'SELECT * from companies WHERE 1';
 
-        $result = $dbCon->query($sql);
+        $result = $this->dbCon->query($sql);
 
         $company_array = [];
 
@@ -39,8 +35,6 @@ class Company {
     }
 
     public function insert($insertData) {
-        $dbCon = $this->DB->set();
-
         $sql = "INSERT INTO companies(company_name)
                 SELECT '{$insertData["data"]["company_name"]}'
                 WHERE NOT EXISTS(
@@ -48,7 +42,7 @@ class Company {
                 FROM companies
                 WHERE company_name = '{$insertData["data"]["company_name"]}')";
 
-        if ($dbCon->query($sql)) {
+        if ($this->dbCon->query($sql)) {
             $response = [
                 'success' => '0 : 正常', 
                 'data' => $insertData
@@ -63,12 +57,12 @@ class Company {
     }
 
     public function edit($data) {
-        $dbCon = $this->DB->set();
         $id = $data['data']['id'];
 
-        $sql = "UPDATE companies SET company_name = '{$data["data"]["company_name"]}' WHERE company_id = '$id'";
+        $sql = "UPDATE companies SET company_name = '{$data["data"]["company_name"]}' 
+                WHERE company_id = '$id'";
 
-        if ($dbCon->query($sql)) {
+        if ($this->dbCon->query($sql)) {
             $response = [
                 'success' => '0 : 正常', 
                 'data' => $data
@@ -77,28 +71,6 @@ class Company {
             $response = [
                 'success' => '1 : 異常', 
                 'data' => $data
-            ];
-        }
-        return $response;
-    }
-
-    public function delete($deleteData) {
-        $dbCon = $this->DB->set();
-        $id = $deleteData['data']['id'];
-
-        $sql = "DELETE FROM companies WHERE company_id = '$id'";
-
-        $result = $dbCon->query($sql);
-
-        if (!$result) {
-            $response = [
-                'success' => '1 : 異常',
-                'data' => $deleteData
-            ];
-        } else {
-            $response = [
-                'success' => '0 : 正常',
-                'data' => $deleteData
             ];
         }
         return $response;

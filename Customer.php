@@ -1,13 +1,10 @@
 <?php
-require_once 'DB.php';
 
-class Customer {
-    public $dbCon;
+require_once 'Model.php';
 
-    public function __construct() {
-        $DB = new DB();
-        $this->dbCon = $DB->set();
-    }
+class Customer extends Model{
+    public $sqlTable = 'users';
+    public $sqlId = 'id';
 
     public function insert($data) {
         $keys = implode(',', array_map(function($key) {
@@ -149,27 +146,6 @@ class Customer {
                 'success' => '0 : 正常',
                 'getIdData' => $getIdData,
                 'data' => $list_array
-            ];
-        }
-        return $response;
-    }
-
-    public function delete($deleteData) {
-        $id = $deleteData['data']['id'];
-
-        $sql = "DELETE FROM users WHERE id = '$id'";
-
-        $result = $this->dbCon->query($sql);
-
-        if (!$result) {
-            $response = [
-                'success' => '1 : 異常',
-                'data' => $deleteData
-            ];
-        } else {
-            $response = [
-                'success' => '0 : 正常',
-                'data' => $deleteData
             ];
         }
         return $response;

@@ -52,8 +52,8 @@
                         <th class="form-title"><legend class="sex">性別</legend></th>
                         <td class="data-td">
                             <label for="man" >男性</label>
-                            <input type="radio" id="man" name="user_sex" value="man" checked /><a></a>
-                            <label for="woman">・女性</label>
+                            <input type="radio" id="man" name="user_sex" value="man" checked />
+                            <label for="woman">・女性</label><a></a>
                             <input type="radio" id="woman" name="user_sex" value="woman"/><span class="errorMessage"></span>
                         </td>
                     </tr>

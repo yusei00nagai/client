@@ -14,7 +14,7 @@ function deleteId(e) {
     };
 
     const url = "Customer_Controller.php";
-
+    
     fetch(url, {
         method : 'POST',
         body : JSON.stringify(json),
@@ -24,6 +24,7 @@ function deleteId(e) {
     })
     .then(response => response.json())
     .then(data => {
+        alert("成功しました。");
         if (data.success === '0 : 正常') {
             const deletedRow = document.querySelector('tr[id="' + id + '"]');
             if (deletedRow !== null) {

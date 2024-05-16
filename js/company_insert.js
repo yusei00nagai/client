@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 alert("成功しました。");
-                window.location.href = "./data.php";    //リロードで良い？
+                window.location.href = "./data.php";
             })
             .catch(error => {
                 console.error('Error:', error);
